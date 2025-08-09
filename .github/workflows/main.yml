@@ -1,0 +1,15 @@
+name: Daily Scheduled Workflow
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # Minute Hour Day Month DayOfWeek
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run my script
+        run: echo "Good Morning! Workflow running at 6 AM UTC"
